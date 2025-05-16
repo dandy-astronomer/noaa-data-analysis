@@ -7,8 +7,6 @@ import logging
 # Station IDs - San Diego (9410230) and San Francisco (9414290)
 NOAA_STATIONS = ["9410230", "9414290"]
 
-# deleteing things and adding a new comment
-
 # Data products to collect
 NOAA_PRODUCTS = [
     "water_temperature",
