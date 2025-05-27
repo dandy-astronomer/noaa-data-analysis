@@ -9,6 +9,8 @@ NOAA_STATIONS = ["9410230", "9414290"]
 
 # testing dev deployments
 
+# demo for AM best
+
 # Data products to collect
 NOAA_PRODUCTS = [
     "water_temperature",
