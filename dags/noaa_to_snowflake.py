@@ -4,6 +4,8 @@ import requests
 import pandas as pd
 import logging
 
+# add a comment 
+
 # Station IDs - San Diego (9410230) and San Francisco (9414290)
 NOAA_STATIONS = ["9410230", "9414290"]
 
