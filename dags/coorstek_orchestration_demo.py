@@ -9,7 +9,7 @@ from airflow.providers.databricks.operators.databricks_sql import DatabricksSqlO
 from airflow.providers.http.operators.http import HttpOperator 
 
 # Replace with your actual values
-FIVETRAN_CONNECTOR_ID = "gloater_outer"
+FIVETRAN_CONNECTOR_ID = "crepe_frequent"
 DATABRICKS_JOB_ID = 1123532341565253
 
 default_args = {
