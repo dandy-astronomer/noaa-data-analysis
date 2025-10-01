@@ -79,6 +79,12 @@ def noaa_demo_dag():
         df = df[[col for col in columns_to_keep if col in df.columns]]
 
         return df.to_dict(orient="records")
+    
+    @task(task_id="dummy_ok", retries=0)
+    def dummy_ok(clean_data):
+        logger = logging.getLogger("airflow.task")
+        logger.info("dummy_ok ran. Records in payload: %s", len(clean_data) if isinstance(clean_data, list) else "unknown")
+        return clean_data  # pass-through so downstream tasks receive the same data
 
     @task
     def log_data_summary(clean_data):
@@ -93,6 +99,7 @@ def noaa_demo_dag():
 
     raw = fetch_data()
     clean = transform_data(raw)
-    log_data_summary(clean)
+    passed = dummy_ok(clean)
+    log_data_summary(passed)
 
 dag_instance = noaa_demo_dag()
